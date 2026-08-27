@@ -4,7 +4,7 @@
    ================================================================== */
 (function () {
   
-  const memCoverImage = 'https://res.cloudinary.com/xbffrklb/image/upload/v1787835033/52E00A03-65B6-44BA-8E27-DC32FF0443D4.jpg';
+  const memCoverImage = 'https://res.cloudinary.com/xbffrklb/image/upload/v1787835312/KAR00543_copy.jpg';
 
   const memoryImages = [
     'https://res.cloudinary.com/xbffrklb/image/upload/v1787835050/KAR00179-Enhanced-NR_copy.jpg',
