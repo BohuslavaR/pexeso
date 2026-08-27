@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050511">
+<meta name="color-scheme" content="dark light">
+<title>Memory Game — Bohuslava Rozsypalová</title>
+<meta name="description" content="Standalone memory (pexeso) game in the Dusk Horizon color palette.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       SAMOSTATNÁ STRÁNKA — LEN PEXESO (memory game)
+       Rovnaké triedy a mechanizmus ako v hlavnom portfóliu, takže
+       tento kód sa dá kedykoľvek skopírovať späť do plnej stránky.
+       ============================================================ -->
+  <main class="game-page">
+    <div class="game-wrap">
+      <p class="eyebrow">take a break</p>
+      <h1>Memory Game</h1>
+      <p class="motto-hint">Match all 10 pairs.:)</p>
+
+      <div class="game-hud">
+        <span id="game-moves">Moves: 0</span>
+        <span id="game-pairs">Pairs: 0 / 10</span>
+      </div>
+
+      <div class="memory-grid" id="memory-grid"></div>
+
+      <p class="game-win" id="game-win"></p>
+      <button class="game-reset" id="game-reset">Shuffle again</button>
+      <p class="game-note">Van Gogh Collection</p>
+    </div>
+  </main>
+
+</body>
+</html>
