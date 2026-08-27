@@ -1,31 +1,26 @@
 /* ==================================================================
-   SCRIPT.JS — samostatná stránka: iba Memory Game (pexeso)
+   SCRIPT.JS — Memory Game (pexeso)
    ------------------------------------------------------------------
-   Presne tá istá logika ako v hlavnom portfóliu, vrátane tvojich
-   už vyplnených URL adries obrázkov (cover obrázok + 10 fotiek).
    ================================================================== */
 (function () {
-  /* 👉 Cover obrázok — spoločná "predná strana" pre všetky karty */
-  const memCoverImage = 'https://res.cloudinary.com/xbffrklb/image/upload/v1787814858/IMG_8590.jpg';
+  
+  const memCoverImage = 'https://res.cloudinary.com/xbffrklb/image/upload/v1787835033/52E00A03-65B6-44BA-8E27-DC32FF0443D4.jpg';
 
-  /* 👉 10 fotiek pre pexeso — každá sa v hre objaví 2×.
-     Nahraď ktorýkoľvek reťazec inou URL adresou, ak chceš zmeniť fotku. */
   const memoryImages = [
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832120/PEXESO10.webp',
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832118/PEXESO9.jpg',
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832116/PEXESO8.webp',
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832114/PEXESO7.jpg',
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832113/PEXESO6.jpg',
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832110/PEXESO5.jpg',
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832108/PEXESO4.jpg',
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832106/PEXESO3.jpg',
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832104/PEXESO2.webp',
-    'https://res.cloudinary.com/xbffrklb/image/upload/v1787832102/PEXESO1.jpg'
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787835050/KAR00179-Enhanced-NR_copy.jpg',
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787835048/KAR00072-Enhanced-NR_copy.jpg',
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787835045/IMG_9980.jpg',
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787835040/IMG_3752.jpg',
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787835036/107_2.jpg',
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787835031/29.jpg',
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787835038/BA2024_244.jpg',
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787835027/0EF530F8-488A-4138-822B-B6D6CC28D569.jpg',
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787834983/0C019E9F-25B6-40F1-A807-02B0028B836D.jpg',
+    'https://res.cloudinary.com/xbffrklb/image/upload/v1787835055/KAR00388-Enhanced-NR_copy_-_k%C3%B3pia.jpg'
   ];
 
   const grid = document.getElementById('memory-grid');
-  /* Nastaví cover obrázok raz pre celú mriežku — CSS ho použije
-     na každej "prednej strane" karty cez premennú --mem-cover-img */
+  
   grid.style.setProperty('--mem-cover-img', 'url(' + memCoverImage + ')');
 
   const movesEl = document.getElementById('game-moves');
@@ -48,8 +43,7 @@
     pairsEl.textContent = 'Pairs: 0 / ' + memoryImages.length;
     winEl.textContent = '';
 
-    /* Ku každému obrázku si popri zamiešaní necháme aj jeho poradové
-       číslo (1–10), aby fallback placeholder vedel zobraziť "IMG 3" atď. */
+    
     const deck = memoryImages.map((url, idx) => ({ url, slot: idx + 1 }));
     cards = shuffle([...deck, ...deck]);
 
